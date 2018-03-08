@@ -22,7 +22,8 @@
     // PhoneGap is ready
     function onDeviceReady() {
 		document.getElementById("test2").innerHTML+="onDeviceready OK<br>";
-        var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, {frequency: 3000});
+		navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
+        //var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, {frequency: 3000});
     }
 
 	
