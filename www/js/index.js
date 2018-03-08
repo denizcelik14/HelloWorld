@@ -16,38 +16,29 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-  // Wait for PhoneGap to load
-  watchID = null;
+  
+  
     document.addEventListener("deviceready", onDeviceReady, false);
     // PhoneGap is ready
     function onDeviceReady() {
-        startWatch();
+        var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, {frequency: 3000});
     }
 
-    // Start watching the acceleration
-    function startWatch() {
-        // Update acceleration every 3 seconds
-        var options = { frequency: 1000 };
-        watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
-    }
+	
+	function onSuccess(acceleration) {
+    alert('Acceleration X: ' + acceleration.x + '\n' +
+          'Acceleration Y: ' + acceleration.y + '\n' +
+          'Acceleration Z: ' + acceleration.z + '\n' +
+          'Timestamp: '      + acceleration.timestamp + '\n');
+}
 
-    // Stop watching the acceleration
-    function stopWatch() {
-        if (watchID) {
-            navigator.accelerometer.clearWatch(watchID);
-            watchID = null;
-        }
-    }
-
-    // onSuccess: Get a snapshot of the current acceleration
-    function onSuccess(acceleration) {
-        alert( 'Acceleration X: ' + acceleration.x);
-    }
-
-    // onError: Failed to get the acceleration
-    function onError() {
-        alert('onError!');
-    }
+function onError() {
+    alert('onError!');
+}
+	
+	
+	
+	
 	
 	
 	
