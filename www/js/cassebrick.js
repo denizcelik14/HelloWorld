@@ -210,7 +210,7 @@ Data=new data();
 Raquette=new raquette();
 Balle=new balle();
 if(typeof inertervalGame!=="undefined"){clearInterval(inertervalGame);}
-  inertervalGame=setInterval(game,50);
+  inertervalGame=setInterval(game,20);
 }
 
 /*function keyPush(evt)

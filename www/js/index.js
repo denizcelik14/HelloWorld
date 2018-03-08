@@ -22,7 +22,7 @@
 function processEvent(event) {
    
  
-	Raquette.vx=event.accelerationIncludingGravity.y;
+	Raquette.vx=3*event.accelerationIncludingGravity.y;
 	
 	
 }
