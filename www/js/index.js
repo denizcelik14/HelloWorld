@@ -21,22 +21,25 @@
     document.addEventListener("deviceready", onDeviceReady, false);
     // PhoneGap is ready
     function onDeviceReady() {
+		document.getElementById("test2").innerHTML+="onDeviceready OK<br>";
         var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, {frequency: 3000});
     }
 
 	
 	function onSuccess(acceleration) {
-    alert('Acceleration X: ' + acceleration.x + '\n' +
-          'Acceleration Y: ' + acceleration.y + '\n' +
-          'Acceleration Z: ' + acceleration.z + '\n' +
-          'Timestamp: '      + acceleration.timestamp + '\n');
+		document.getElementById("test2").innerHTML+="On success OK<br>";
+    document.getElementById("test").innerHTML='Acceleration X: ' + acceleration.x + '<br>' +
+          'Acceleration Y: ' + acceleration.y + '<br>' +
+          'Acceleration Z: ' + acceleration.z + '<br>' +
+          'Timestamp: '      + acceleration.timestamp;
 }
 
 function onError() {
+	document.getElementById("test2").innerHTML+="On error OK<br>";
     alert('onError!');
 }
 	
-	
+	document.getElementById("test2").innerHTML+="index.js OK<br>";
 	
 	
 	
