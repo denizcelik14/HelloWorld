@@ -176,6 +176,7 @@ var accelerometer = {
             start();
         }
 
+		
         if (cordova.platformId === "browser" && !eventTimerId) {
             // Start firing devicemotion events if we haven't already
             var devicemotionEvent = new Event('devicemotion');

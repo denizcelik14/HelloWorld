@@ -18,29 +18,30 @@
  */
   
   
+
+function processEvent(event) {
+   
+ document.getElementById("test").innerHTML+='Acceleration X: ' + Math.round(event.accelerationIncludingGravity.x);
+	
+	
+	
+}
+
+window.addEventListener("devicemotion",processEvent, true);
+
     document.addEventListener("deviceready", onDeviceReady, false);
     // PhoneGap is ready
     function onDeviceReady() {
 		document.getElementById("test2").innerHTML+="onDeviceready OK<br>";
-		navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
-        //var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, {frequency: 3000});
-    }
-
-	
-	function onSuccess(acceleration) {
-		document.getElementById("test2").innerHTML+="On success OK<br>";
-    document.getElementById("test").innerHTML='Acceleration X: ' + acceleration.x + '<br>' +
-          'Acceleration Y: ' + acceleration.y + '<br>' +
-          'Acceleration Z: ' + acceleration.z + '<br>' +
-          'Timestamp: '      + acceleration.timestamp;
+		
+		window.addEventListener("compassneedscalibration",function(event) {
+      // ask user to wave device in a figure-eight motion .   
+      event.preventDefault();
+     }, true);
+	 
 }
 
-function onError() {
-	document.getElementById("test2").innerHTML+="On error OK<br>";
-    alert('onError!');
-}
 	
-	document.getElementById("test2").innerHTML+="index.js OK<br>";
 	
 	
 	
