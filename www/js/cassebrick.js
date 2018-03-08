@@ -1,5 +1,9 @@
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
+var Lscreen=window.innerWidth;
+var Hscreen=window.innerHeight;
+c.style.width=Lscreen+"px";
+c.style.height=Hscreen+"px";
 var Lb=50;
 var Hb=20;
 

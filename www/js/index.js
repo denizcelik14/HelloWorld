@@ -21,8 +21,8 @@
 
 function processEvent(event) {
    
- document.getElementById("test").innerHTML='Acceleration X: ' + event.accelerationIncludingGravity.x;
-	Raquette.vx=event.accelerationIncludingGravity.x;
+ 
+	Raquette.vx=event.accelerationIncludingGravity.y;
 	
 	
 }
@@ -32,7 +32,6 @@ window.addEventListener("devicemotion",processEvent, true);
     document.addEventListener("deviceready", onDeviceReady, false);
     // PhoneGap is ready
     function onDeviceReady() {
-		document.getElementById("test2").innerHTML+="onDeviceready OK<br>";
 		
 		window.addEventListener("compassneedscalibration",function(event) {
       // ask user to wave device in a figure-eight motion .   
