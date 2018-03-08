@@ -17,6 +17,7 @@
  * under the License.
  */
   // Wait for PhoneGap to load
+  watchID = null;
     document.addEventListener("deviceready", onDeviceReady, false);
     // PhoneGap is ready
     function onDeviceReady() {
