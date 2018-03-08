@@ -21,7 +21,7 @@
 
 function processEvent(event) {
    
- document.getElementById("test").innerHTML+='Acceleration X: ' + Math.round(event.accelerationIncludingGravity.x);
+ document.getElementById("test").innerHTML='Acceleration X: ' + Math.round(event.accelerationIncludingGravity.x);
 	
 	
 	
