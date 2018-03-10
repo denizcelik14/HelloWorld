@@ -33,8 +33,8 @@ function Balle(x,y,vx,vy)
   //évolution
   this.deplacement=function(){
     //modification de la vitesse avec la gravité.
-    this.vx+=ax*Dt/10;
-	this.vy+=ay*Dt/10;
+    this.vx+=ax*Dt/1000;
+	this.vy+=ay*Dt/1000;
     if(this.x+this.r>Largeur)//rebond sur le coté droit
       {
       this.vx*=-1;
@@ -77,7 +77,7 @@ maBalle.dessiner();
 }
 
 //création des balles
-maBalle=new Balle(200,100 ,100,1);
+maBalle=new Balle(200,100 ,0,0);
 
 
 setInterval(rendu,Dt)
