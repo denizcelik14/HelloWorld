@@ -1,18 +1,15 @@
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
-var Lscreen=window.innerWidth;
-var Hscreen=window.innerHeight;
-c.style.width=Lscreen+"px";
-c.style.height=Hscreen+"px";
 
-var Dt=30;
+
+var Dt=100;
 var Largeur=300;
 var Hauteur=200;
 var ax=0;
 var ay=0;
 function clean()
 {
-ctx.fillStyle="#FFFFFF10";//on nettoie avec une peinture un peu transparente.
+ctx.fillStyle="#FFFFFF";//on nettoie avec une peinture un peu transparente.
 ctx.beginPath();
 ctx.rect(0,0,Largeur,Hauteur);
 ctx.fill();
